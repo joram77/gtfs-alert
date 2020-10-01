@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1"
+	xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+	<persistence-unit name="gtfs_alert">
+
+		<provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+		<class>be.wethinkonline.gtfs_notify.model.CalendarDate</class>
+		<class>be.wethinkonline.gtfs_notify.model.GtfsRtTripUpdate</class>
+		<class>be.wethinkonline.gtfs_notify.model.GtfsRtTripUpdatesStoptime</class>
+		<class>be.wethinkonline.gtfs_notify.model.Route</class>
+		<class>be.wethinkonline.gtfs_notify.model.StopTime</class>
+		<class>be.wethinkonline.gtfs_notify.model.Stop</class>
+		<class>be.wethinkonline.gtfs_notify.model.Trip</class>
+		<properties>
+			<property name="javax.persistence.jdbc.driver" value="org.sqlite.JDBC" />
+			<property name="javax.persistence.jdbc.url"
+				value="jdbc:sqlite:/Users/user/Documents/projects/gtfs-alert/db/gtfs_alert.sqlite" />
+			<property name="eclipselink.logging.level" value="INFO" />
+
+			<property name="eclipselink.jdbc.cache-statement" value="true"></property>
+			<property name="eclipselink.logging.level.sql" value="FINE" />
+			<property name="eclipselink.logging.parameters" value="true" />
+			<property name="eclipselink.jdbc.native-sql" value="false" />
+			<!-- property name="eclipselink.ddl-generation" value="create-tables" 
+				/ -->
+		</properties>
+	</persistence-unit>
+</persistence>
